@@ -1,16 +1,14 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import Login from "./componenets/Login";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./app";
 import "./index.css";
-// import Signup from "./componenets/signup";
+// import Login from "./componenets/Login";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <div>
-      <div className=" rounded-lg text-6xl mb-10 font-serif text-cyan-600 font-semibold">
-        Vaultit
-      </div>
-      <Login />
-    </div>
-  </StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );

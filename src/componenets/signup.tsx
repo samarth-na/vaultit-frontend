@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { apiRequest } from "../lib/api";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -13,12 +14,8 @@ export default function Signup() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:4000/auth/signup", {
+      const res = await apiRequest("/auth/sign-up/email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include", // IMPORTANT
         body: JSON.stringify({ email, password, name }),
       });
 
@@ -28,7 +25,7 @@ export default function Signup() {
 
       // signup successful
       // later you can navigate("/") here
-      alert("Logged in");
+      alert("signed in");
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -42,8 +39,8 @@ export default function Signup() {
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-xl  text-slate-900 font-serif">sign up</h1>
-          <a href="/signup" className="text-sm text-blue-600 hover:underline">
-            login
+          <a href="/signin" className="text-sm text-blue-600 hover:underline">
+            sign-in
           </a>
         </div>
 
@@ -112,7 +109,7 @@ export default function Signup() {
             disabled={loading}
             className="w-full rounded-md bg-slate-900 text-white py-2 text-sm font-medium hover:bg-slate-800 disabled:opacity-60"
           >
-            {loading ? "signing up in..." : "Login"}
+            {loading ? "signing up in..." : "sign-in"}
           </button>
         </form>
       </div>
