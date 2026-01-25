@@ -47,7 +47,7 @@ export default function App() {
       {/* Protected home route */}
       <Route
         path="/"
-        element={user ? <Home /> : <Navigate to="/login" replace />}
+        element={user ? <Home user={user} /> : <Navigate to="/login" replace />}
       />
     </Routes>
   );

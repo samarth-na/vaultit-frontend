@@ -1,8 +1,17 @@
-export default function Home() {
+import BigTextInput from "../components/BigTextInput";
+import Layout from "../components/Layout";
+
+export default function Home({ user }: { user: any }) {
+  // console.log(user);
+
   return (
-    <div className="p-4">
-      <h1 className="text-xl">Home</h1>
-      <p className="text-cyan-600">You are logged in</p>
-    </div>
+    <Layout user={user}>
+      <div className=" flex flex-col items-center">
+        <h1 className="p-8 text-2xl font-serif">
+          welcome {user.name}, start writing
+        </h1>
+        <BigTextInput />
+      </div>
+    </Layout>
   );
 }
