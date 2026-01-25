@@ -13,20 +13,29 @@ export default function Signup() {
     setError("");
     setLoading(true);
 
+    console.log("Signup request started");
+
     try {
+      // Make API request to signup endpoint
       const res = await apiRequest("/auth/sign-up/email", {
         method: "POST",
         body: JSON.stringify({ email, password, name }),
       });
 
+      console.log("Signup response:", res.status, res.ok);
+
       if (!res.ok) {
-        throw new Error("Invalid email or password");
+        throw new Error("Signup failed. Please check your details.");
       }
+
+      const data = await res.json();
+      console.log("Signup successful:", data);
 
       // signup successful
       // later you can navigate("/") here
-      alert("signed in");
+      alert("signed up successfully");
     } catch (err: any) {
+      console.log("Signup error:", err.message);
       setError(err.message);
     } finally {
       setLoading(false);
@@ -86,14 +95,12 @@ export default function Signup() {
 
           {/* Name */}
           <div>
-            <div className="flex items-center justify-between mb-1">
-              <label className="text-sm font-medium text-slate-900">Name</label>
-              <a href="#" className="text-sm text-slate-500 hover:underline">
-                Forgot your password?
-              </a>
-            </div>
+            <label className="block text-sm font-medium text-slate-900 mb-1">
+              Name
+            </label>
             <input
-              type="password"
+              type="text"
+              placeholder="John Doe"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -109,7 +116,7 @@ export default function Signup() {
             disabled={loading}
             className="w-full rounded-md bg-slate-900 text-white py-2 text-sm font-medium hover:bg-slate-800 disabled:opacity-60"
           >
-            {loading ? "signing up in..." : "sign-in"}
+            {loading ? "signing up..." : "sign up"}
           </button>
         </form>
       </div>

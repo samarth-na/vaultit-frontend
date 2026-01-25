@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./app";
 import "./index.css";
+// import Health from "./componenets/health";
 // import Login from "./componenets/Login";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

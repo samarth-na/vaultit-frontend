@@ -20,7 +20,8 @@ export default function App() {
 
         if (!res.ok) throw new Error();
         const data = await res.json();
-        setUser(data);
+        setUser(data.user);
+        console.log(data.user);
       } catch {
         setUser(null);
       } finally {

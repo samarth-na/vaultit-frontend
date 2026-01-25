@@ -12,19 +12,29 @@ export default function Signin() {
     setError("");
     setLoading(true);
 
+    console.log("Signin request started");
+
     try {
-      const res = await apiRequest("http://localhost:3000/auth/sign-in/email", {
+      // Make API request to signin endpoint
+      const res = await apiRequest("/auth/sign-in/email", {
         method: "POST",
         body: JSON.stringify({ email, password }),
       });
 
+      console.log("Signin response:", res.status, res.ok);
+
       if (!res.ok) {
         throw new Error("Invalid email or password");
       }
+      
+      const data = await res.json();
+      console.log("Signin successful:", data);
+      
       // signin successful
       // later you can navigate("/") here
-      alert("signged in");
+      alert("signed in");
     } catch (err: any) {
+      console.log("Signin error:", err.message);
       setError(err.message);
     } finally {
       setLoading(false);
@@ -98,7 +108,7 @@ export default function Signin() {
               disabled={loading}
               className="w-full rounded-md bg-cyan-600 text-white py-2 text-sm font-medium hover:bg-cyan-800 disabled:opacity-60"
             >
-              {loading ? "signging in..." : "signin"}
+              {loading ? "signing in..." : "signin"}
             </button>
           </form>
         </div>
