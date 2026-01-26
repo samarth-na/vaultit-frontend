@@ -1,4 +1,4 @@
-import BigTextInput from "../components/BigTextInput";
+import TextArea from "../components/TextInput";
 import Layout from "../components/Layout";
 
 export default function Home({ user }: { user: any }) {
@@ -7,10 +7,8 @@ export default function Home({ user }: { user: any }) {
   return (
     <Layout user={user}>
       <div className=" flex flex-col items-center">
-        <h1 className="p-8 text-2xl font-serif">
-          welcome {user.name}, start writing
-        </h1>
-        <BigTextInput />
+        <h1 className="p-8 text-2xl font-serif">welcome, startwriting!!!</h1>
+        <TextArea />
       </div>
     </Layout>
   );
