@@ -6,72 +6,91 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.141 0.005 285.823);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.141 0.005 285.823);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.141 0.005 285.823);
-    --primary: oklch(0.61 0.11 222);
-    --primary-foreground: oklch(0.98 0.02 201);
-    --secondary: oklch(0.967 0.001 286.375);
-    --secondary-foreground: oklch(0.21 0.006 285.885);
-    --muted: oklch(0.967 0.001 286.375);
-    --muted-foreground: oklch(0.552 0.016 285.938);
-    --accent: oklch(0.61 0.11 222);
-    --accent-foreground: oklch(0.98 0.02 201);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.92 0.004 286.32);
-    --input: oklch(0.92 0.004 286.32);
-    --ring: oklch(0.705 0.015 286.067);
-    --chart-1: oklch(0.87 0.12 207);
-    --chart-2: oklch(0.8 0.13 212);
-    --chart-3: oklch(0.71 0.13 215);
-    --chart-4: oklch(0.61 0.11 222);
-    --chart-5: oklch(0.52 0.09 223);
+    /* Palette: White/Black base with Sky Blue, Cherry Red, Cool Green, Bright Yellow accents */
+    /* Light Mode */
+    --background: #FFFFFF;
+    --foreground: #111827;
+    --card: #FFFFFF;
+    --card-foreground: #111827;
+    --popover: #FFFFFF;
+    --popover-foreground: #111827;
+    --primary: #0EA5E9;         /* skyblue-500 */
+    --primary-foreground: #FFFFFF;
+    --secondary: #F3F4F6;       /* gray-100 */
+    --secondary-foreground: #374151;  /* gray-700 */
+    --muted: #F9FAFB;           /* gray-50 */
+    --muted-foreground: #6B7280; /* gray-500 */
+    --accent: #10B981;          /* emerald-500 - cool green */
+    --accent-foreground: #FFFFFF;
+    --destructive: #E11D48;     /* rose-600 - cherry red */
+    --destructive-foreground: #FFFFFF;
+    --border: #E5E7EB;          /* gray-200 */
+    --input: #E5E7EB;
+    --ring: #0EA5E9;            /* skyblue-500 */
+    --chart-1: #0EA5E9;
+    --chart-2: #10B981;
+    --chart-3: #E11D48;
+    --chart-4: #F59E0B;         /* amber-500 - bright yellow */
+    --chart-5: #8B5CF6;         /* violet-500 */
     --radius: 0;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.141 0.005 285.823);
-    --sidebar-primary: oklch(0.61 0.11 222);
-    --sidebar-primary-foreground: oklch(0.98 0.02 201);
-    --sidebar-accent: oklch(0.61 0.11 222);
-    --sidebar-accent-foreground: oklch(0.98 0.02 201);
-    --sidebar-border: oklch(0.92 0.004 286.32);
-    --sidebar-ring: oklch(0.705 0.015 286.067);
+    --sidebar: #F9FAFB;
+    --sidebar-foreground: #374151;
+    --sidebar-primary: #0EA5E9;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #10B981;
+    --sidebar-accent-foreground: #FFFFFF;
+    --sidebar-border: #E5E7EB;
+    --sidebar-ring: #0EA5E9;
 }
 
 .dark {
-    --background: oklch(0.141 0.005 285.823);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.21 0.006 285.885);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.21 0.006 285.885);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.71 0.13 215);
-    --primary-foreground: oklch(0.3 0.05 230);
-    --secondary: oklch(0.274 0.006 286.033);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.274 0.006 286.033);
-    --muted-foreground: oklch(0.705 0.015 286.067);
-    --accent: oklch(0.71 0.13 215);
-    --accent-foreground: oklch(0.3 0.05 230);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.552 0.016 285.938);
-    --chart-1: oklch(0.87 0.12 207);
-    --chart-2: oklch(0.8 0.13 212);
-    --chart-3: oklch(0.71 0.13 215);
-    --chart-4: oklch(0.61 0.11 222);
-    --chart-5: oklch(0.52 0.09 223);
-    --sidebar: oklch(0.21 0.006 285.885);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.8 0.13 212);
-    --sidebar-primary-foreground: oklch(0.3 0.05 230);
-    --sidebar-accent: oklch(0.71 0.13 215);
-    --sidebar-accent-foreground: oklch(0.3 0.05 230);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.552 0.016 285.938);
+    --background: #0A0A0A;      /* near black */
+    --foreground: #F9FAFB;      /* off-white */
+    --card: #171717;            /* gray-900 */
+    --card-foreground: #F9FAFB;
+    --popover: #171717;
+    --popover-foreground: #F9FAFB;
+    --primary: #38BDF8;         /* skyblue-400 */
+    --primary-foreground: #0A0A0A;
+    --secondary: #262626;       /* gray-800 */
+    --secondary-foreground: #D1D5DB; /* gray-300 */
+    --muted: #1F1F1F;           /* gray-900 with slight variation */
+    --muted-foreground: #9CA3AF; /* gray-400 */
+    --accent: #34D399;          /* emerald-400 - cool green */
+    --accent-foreground: #0A0A0A;
+    --destructive: #F87171;     /* rose-400 - cherry red */
+    --destructive-foreground: #0A0A0A;
+    --border: #404040;          /* gray-700 */
+    --input: #404040;
+    --ring: #38BDF8;            /* skyblue-400 */
+    --chart-1: #38BDF8;
+    --chart-2: #34D399;
+    --chart-3: #F87171;
+    --chart-4: #FBBF24;         /* amber-400 - bright yellow */
+    --chart-5: #A78BFA;         /* violet-400 */
+    --sidebar: #111827;         /* gray-900 */
+    --sidebar-foreground: #D1D5DB;
+    --sidebar-primary: #38BDF8;
+    --sidebar-primary-foreground: #0A0A0A;
+    --sidebar-accent: #34D399;
+    --sidebar-accent-foreground: #0A0A0A;
+    --sidebar-border: #404040;
+    --sidebar-ring: #38BDF8;
+
+    /* Notes Page Unique Theme - Dark Mode */
+    --notes-primary: #F59E0B;         /* amber-500 (keep vibrant) */
+    --notes-primary-foreground: #FFFFFF;
+    --notes-accent: #F97316;          /* orange-500 */
+    --notes-accent-foreground: #FFFFFF;
+    --notes-background: #1C1917;      /* dark warm zinc-900 */
+    --notes-sidebar-bg: linear-gradient(135deg, #1C1917 0%, #292622 100%);
+    --notes-editor-bg: #171717;       /* zinc-900 */
+    --notes-border: #FCD34D;          /* amber-300 for accent border */
+    --notes-mesh-1: rgba(249, 168, 37, 0.1);
+    --notes-mesh-2: rgba(251, 146, 60, 0.08);
+    --notes-mesh-3: rgba(254, 215, 170, 0.15);
+    --notes-muted: rgba(249, 168, 37, 0.08);
+    --notes-text-secondary: #D6D3D1; /* zinc-300 for secondary text */
 }
 
 @theme inline {
